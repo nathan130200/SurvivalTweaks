@@ -1,0 +1,47 @@
+name: SurvivalTweaks
+version: 1.0-SNAPSHOT
+author: FRNathan13
+main: survivaltweaks.SurvivalTweaks
+
+
+commands:
+  local:
+    description: Conversar no chat local.
+    aliases: l
+    permission: st.channels.local
+
+  global:
+    description: Conversar no chat global.
+    aliases: g
+    permission: st.channels.global
+
+  switch:
+    description: Alterar o canal atual de chat.
+    aliases:
+      - ch
+      - channel
+      - leave
+    permission: st.channels.switch
+
+permissions:
+  st.chat:
+    default: true
+    children:
+      st.channels.global: true
+      st.channels.local: true
+      st.channels.switch: true
+
+  st.channels.switch:
+    default: true
+
+  st.channels.global:
+    default: true
+
+  st.channels.local:
+    default: true
+
+  st.channels.create:
+    default: op
+
+  st.channels.remove:
+    default: op
